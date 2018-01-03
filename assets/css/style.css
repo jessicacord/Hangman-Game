@@ -1,0 +1,91 @@
+body {
+    padding: 0rem 20rem;
+    background: tan;
+}
+h1 {
+    font-family: 'Sancreek', cursive;
+    font-size: 70px;
+    text-transform: uppercase;
+}
+h2 {
+    font-family: 'Old Standard TT', serif;
+    color:white;
+}
+.header {
+    padding-bottom: 10rem;
+}
+.subheader {
+    transform: rotate(-6deg);
+    margin-top: -3rem;
+    background: rgba(255, 0, 0, 0.6);
+}
+h3 {
+    font-family: 'Lobster', cursive;
+}
+h4 {
+    font-family: 'Amatic SC', cursive;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.blank, .blank-space {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0px 3px;
+    position: relative;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 16px;
+}
+.blank {
+    border-bottom: 1px solid black;
+}
+.blank-space {
+    border-bottom: 1px solid tan;
+}
+.unguessed-letter, .guessed-letter-wrong, .guessed-letter-correct {
+    float: left;
+    margin: 6px;
+    font-size: 20px;
+    font-family: 'Old Standard TT', serif;
+}
+
+.unguessed-letter {
+    color: grey;
+}
+
+.guessed-letter-wrong {
+    color: red;
+}
+
+.guessed-letter-correct {
+    color: green;
+}
+
+#hangman-container {
+    height: 300px;
+}
+
+#hangman {
+    height: 100%;
+}
+
+#guess-word {
+    border: 1px solid;
+    height: 50px;
+    padding: 11px 0px 0px 11px;
+}
+
+.start-game {
+    padding: 30px;
+}
+.wild-west {
+    background-image: url("../images/background.jpg");
+    margin: 0rem -20rem;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}

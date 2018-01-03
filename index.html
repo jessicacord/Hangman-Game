@@ -4,15 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hnagman Game</title>
+    <title>Hangman Game</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lobster|Old+Standard+TT:400i|Sancreek" rel="stylesheet">
 
 </head>
 <body>
+<div class="wild-west">
+    <div class="row header">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 text-center">
+            <!-- Title, possibly use western font for theme -->
+            <h1>Hangman</h1>
+            <div class="subheader">
+                <h2>"Every gun makes its own tune..."</h2>
+            </div>
+            <div class="col-lg-4"></div>
+            
+            
+            <!-- Image(s) of the parts of the hangman being drawn for each wrong guess. Change to You Win/You Lose. -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <!-- Image of western character guessed -->
+            <div id="hangman-container">
+                <img id="hangman">
+            </div>
+        </div>
+            
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <!-- Guesses remaining -->
+            <div>
+                <h3>Guesses Remaining</h3>
+                <h4><span id="guesses-remaining"></span></h4>
+            </div>
+        </div>
+    </div>
+            
+    <div class="row">
+        <div class="col-lg-9 text-center">
+           
+
+            <!-- Current Word to guess -->
+            <div id="display-word">
+
+            </div>
+            <div id="guess-word">
+
+                <div class="clearfix"></div>
+            </div>
+            
+            <audio id="movie-clip" src=""></audio>
+            <audio id="game-over-sound" src="assets/sounds/gameover.mp3"></audio>
+
+            <div class="row">
+                <div class="col-lg-6 start-game">
+                    <button class="btn btn-danger" id="start">New Game</button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <h3>Wins</h3>
+                        <h4><span id="wins"></span></h4>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </div>
+        <div class="col-lg-3">
+            
+            <!-- Prompt to start -->
+
+            <!-- Record Wins -->
+
+            <!-- Letters guessed -->
+            <div id="letters-guessed">
+                <h3>Letters Guessed</h3>
+
+                <div id="letters">
+
+                </div>
+                    
+            </div>
+
+        </div>
+    </div>
+        
     
 
-<script type="text/javascript" src="assets/javascript/game.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
