@@ -8,7 +8,7 @@ h1 {
     text-transform: uppercase;
 }
 h2 {
-    font-family: 'Old Standard TT', serif;
+    font-family: 'Berkshire Swash', cursive;
     color:white;
 }
 .header {
@@ -16,14 +16,14 @@ h2 {
 }
 .subheader {
     transform: rotate(-6deg);
-    margin-top: -3rem;
-    background: rgba(255, 0, 0, 0.6);
+    margin-top: -3.8rem;
+    padding-left: 3rem;
 }
 h3 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Crimson Text', serif;
 }
 h4 {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Berkshire Swash', cursive;
 }
 .clearfix:after {
     content: "";
@@ -37,7 +37,7 @@ h4 {
     margin: 0px 3px;
     position: relative;
     text-align: center;
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Berkshire Swash', cursive;
     font-size: 16px;
 }
 .blank {
@@ -48,9 +48,9 @@ h4 {
 }
 .unguessed-letter, .guessed-letter-wrong, .guessed-letter-correct {
     float: left;
-    margin: 6px;
+    padding: 6px;
     font-size: 20px;
-    font-family: 'Old Standard TT', serif;
+    font-family: 'Berkshire Swash', cursive;
 }
 
 .unguessed-letter {
@@ -58,11 +58,11 @@ h4 {
 }
 
 .guessed-letter-wrong {
-    color: red;
+    background-color: #a9435c;
 }
 
 .guessed-letter-correct {
-    color: green;
+    background-color: #a3d8ff;
 }
 
 #hangman-container {
@@ -71,6 +71,8 @@ h4 {
 
 #hangman {
     height: 100%;
+    background-color: rgba(181,169,141,0.5);
+    border-radius: 30px;
 }
 
 #guess-word {
@@ -88,4 +90,8 @@ h4 {
     background-size: cover;
     background-position: center;
     height: 600px;
+}
+.btn {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 24px;
 }

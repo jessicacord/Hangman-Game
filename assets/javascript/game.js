@@ -1,11 +1,12 @@
 //Declare variables of word bank, images to match, and hangman images
 
 var movies = [
-    { 
-        name: "The Good The Bad and The Ugly",
-        sound: "",
-        poster: "assets/images/TheGoodTheBadTheUgly.jpg"
-    }, {
+    // { 
+    //     name: "The Good The Bad and The Ugly",
+    //     sound: "",
+    //     poster: "assets/images/TheGoodTheBadTheUgly.jpg"
+    // }, 
+    {
         name: "A Fistful of Dollars",
         sound: "assets/sounds/AFistfulofDollars.mp3",
         poster: "assets/images/AFistfulofDollars.jpg"
@@ -63,12 +64,12 @@ var movies = [
     //  }
     ];
 
-var lettersGuessed = $("#letters-guessed");
+var lettersGuessed = document.querySelector("#letters-guessed");
 var guessWord = document.querySelector("#guess-word");
 var hangmanDiv = document.querySelector("#hangman-container");
 var displayCompPick = document.querySelector("#display-word");
 var guessesRemaining  = document.querySelector("#guesses-remaining");
-var lettersDiv = $("#letters");
+var lettersDiv = document.querySelector("#letters");
 var movieClip = document.querySelector("#movie-clip");
 var winsDiv = document.querySelector("#wins");
 var wins = 0;
@@ -158,30 +159,29 @@ document.getElementById("start").onclick = function(newGame) {
     //Take user input and replace blanks with letters or add letters to "Letters Guessed" and change hangman image/counter
 
     document.onkeyup = function(e){
-        var guessKey = e.key;
-        var displayGuessKey = guessKey.toUpperCase();
+        var guessKey = e.key.toUpperCase();
         
         //User guesses letter, will not run if special character
-        if (userGuesses.indexOf(displayGuessKey) < 0 && guesses > 0 && lettersInWord !== lettersGuessedInWord) {
+        if (userGuesses.indexOf(guessKey) < 0 && guesses > 0 && lettersInWord !== lettersGuessedInWord) {
 
-            userGuesses.push(displayGuessKey);
+            userGuesses.push(guessKey);
             console.log(userGuesses);
             
             //New letter is guessed
-            if (letters.indexOf(displayGuessKey) > - 1) {
+            if (letters.indexOf(guessKey) > -1) {
                 
                 //Determine if letter is movie title
-                if ( newWord.includes(displayGuessKey) ) {
+                if ( newWord.includes(guessKey) ) {
 
                     //Puts letter in blanks
-                    var changeBlank = document.getElementsByClassName(displayGuessKey);
+                    var changeBlank = document.getElementsByClassName(guessKey);
             
                     for ( var i = 0; i < changeBlank.length; i++) {
-                        changeBlank[i].innerHTML = displayGuessKey;
+                        changeBlank[i].innerHTML = guessKey;
                     }
 
                     //Change Guessed Letter to Green
-                    document.getElementById("letter" + displayGuessKey).className = "guessed-letter-correct letter";
+                    document.getElementById("letter" + guessKey).className = "guessed-letter-correct letter";
 
                     //Increase No. of letters Guessed in Word
                     lettersGuessedInWord += changeBlank.length;
@@ -189,7 +189,7 @@ document.getElementById("start").onclick = function(newGame) {
 
                 } else {
                     //Change guessed letter to red
-                    document.getElementById("letter" + displayGuessKey).className = "guessed-letter-wrong letter";
+                    document.getElementById("letter" + guessKey).className = "guessed-letter-wrong letter";
 
                     guesses -= 1
 
@@ -220,7 +220,7 @@ document.getElementById("start").onclick = function(newGame) {
                 }
                 
             }
-        } 
+        }
 
         //If user runs out of tries, display You Lose text, play sound        
         if (guesses === 0) {
